@@ -3,14 +3,24 @@
 
 import sys
 import re
+import os
 
 # http://www.linuxhowtos.org/Tips%20and%20Tricks/ansi_escape_sequences.htm
-COL_YELLOW_BOLD = "\033[1;33m"
-COL_WHITE_BOLD  = "\033[1;37m"
-COL_CYAN_BOLD   = "\033[1;36m"
-COL_RED_BOLD    = "\033[1;31m"
-COL_NORMAL      = "\033[0;37m"
-COL_RESET       = "\033[0m"
+if os.name == "nt": #Windoge doesn't support those formatting codes
+  COL_YELLOW_BOLD = ""
+  COL_WHITE_BOLD  = ""
+  COL_CYAN_BOLD   = ""
+  COL_RED_BOLD    = ""
+  COL_NORMAL      = ""
+  COL_RESET       = ""
+else:
+  COL_YELLOW_BOLD = "\033[1;33m"
+  COL_WHITE_BOLD  = "\033[1;37m"
+  COL_CYAN_BOLD   = "\033[1;36m"
+  COL_RED_BOLD    = "\033[1;31m"
+  COL_NORMAL      = "\033[0;37m"
+  COL_RESET       = "\033[0m"
+
 
 def check(inp, sol):
   """Check an input string against a solution string, returning a human-readable
@@ -42,12 +52,12 @@ def format_output(out):
    """Format a human-readable output, as returned by check(inp, sol).
    
    Return False if an error message was detected."""
-  if out.startswith("!"):
-    print("  %s! %s%s%s" % (COL_RED_BOLD, COL_NORMAL, out[1:], COL_RESET))
-    return False
-  else:
-    print("%s  %s" % (COL_NORMAL, out))
-    return True
+   if out.startswith("!"):
+     print("  %s! %s%s%s" % (COL_RED_BOLD, COL_NORMAL, out[1:], COL_RESET))
+     return False
+   else:
+     print("%s  %s" % (COL_NORMAL, out))
+     return True
 
 
 
@@ -73,6 +83,7 @@ while True:
              "  the solution.\n" +
              "\n" +
              "  Type 'start' to start a game.\n" +
+             "  Type 'quit' to quit the game.\n" +
              "\n" +
              "  Have fun!")
   elif cmd == "start":
