@@ -19,3 +19,8 @@ comingsoon.tiff
 License
 -------
 This project has been released under the [MIT license](http://choosealicense.com/licenses/mit/), a copy of which can be found in the `LICENSE` file in this repository.
+
+Acknowledgements
+----------------
+
+`vim` for best editor, `netcat` for best cat after benaryorg.

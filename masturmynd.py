@@ -13,14 +13,16 @@ COL_NORMAL      = "\033[0;37m"
 COL_RESET       = "\033[0m"
 
 def check(inp, sol):
+  """Check an input string against a solution string, returning a human-readable
+  message as output, detailing either the results or an error message."""
   if len(inp) != len(sol):
     return "!Invalid length (Required: %s)" % len(sol)
-  black,white=0,0
+  black,white = 0,0
   fuzzy = set(inp)
   
   for i in range(0,len(sol)):
-    subj=inp[i]
-    if subj==sol[i]:
+    subj = inp[i]
+    if subj == sol[i]:
       black += 1
       if subj in fuzzy:
         fuzzy.remove(subj)
@@ -29,18 +31,26 @@ def check(inp, sol):
   return "%sW%sB" % (white, black)
 
 def notice(msg):
+  """Print an important notice with asterisks for attention in color."""
   print("%s ***%s %s %s" % (COL_YELLOW_BOLD, COL_WHITE_BOLD, msg, COL_NORMAL))
 
 def message(msg):
+  """Print a normal message, making parts in single quotes in color."""
   print(re.sub(r"'([^']+)'", COL_RESET + r"\1" + COL_NORMAL, msg));
 
 def format_output(out):
+   """Format a human-readable output, as returned by check(inp, sol).
+   
+   Return False if an error message was detected."""
   if out.startswith("!"):
     print("  %s! %s%s%s" % (COL_RED_BOLD, COL_NORMAL, out[1:], COL_RESET))
     return False
   else:
     print("%s  %s" % (COL_NORMAL, out))
     return True
+
+
+
 
 notice("Welcome to Mastur Mynd")
 notice("Type 'help' for help")
@@ -76,10 +86,10 @@ while True:
     while out != correct_out:
       inp = input("%s  %d|%s" % (COL_NORMAL, attempts, COL_RESET))
       out = check(inp, sol)
-      if format_output(out): #returns True if successful attempt
+      if format_output(out): # returns True if successful attempt
         attempts += 1 
     
-    print("  gg\n") #good game
+    print("  gg\n") # good game
     notice("Game finished with %d attempts." % (attempts - 1))
     notice("Type 'quit' to close the program.") 
   elif cmd == "quit":
