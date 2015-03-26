@@ -13,7 +13,9 @@ python masturmynd.py
 
 Screenshots
 -----------
-comingsoon.tiff
+![A screenshot showing how solutions are entered into the program](https://github.com/xxyy/masturmynd/raw/master/screenshots/enter-solution.png)
+
+![A screenshot showing a full game](https://github.com/xxyy/masturmynd/raw/master/screenshots/full-game.png)
 
 
 License
