@@ -11,6 +11,8 @@ git clone https://github.com/xxyy/masturmynd.git
 python masturmynd.py
 ````
 
+Note that this uses terminal colors specific to Unix and the output might look weird on Windows® PCs.
+
 Screenshots
 -----------
 ![A screenshot showing how solutions are entered into the program](https://github.com/xxyy/masturmynd/raw/master/screenshots/enter-solution.png)
