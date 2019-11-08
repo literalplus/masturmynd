@@ -7,7 +7,7 @@ A simple text-based implementation of the [Mastermind board game](https://en.wik
 To play, simply clone this repo and execute the program:
 
 ````bash
-git clone https://github.com/xxyy/masturmynd.git
+git clone https://github.com/literalplus/masturmynd.git
 python masturmynd.py
 ````
 
@@ -15,9 +15,9 @@ Note that this uses terminal colors specific to Unix and the output might look w
 
 Screenshots
 -----------
-![A screenshot showing how solutions are entered into the program](https://github.com/xxyy/masturmynd/raw/master/screenshots/enter-solution.png)
+![A screenshot showing how solutions are entered into the program](https://github.com/literalplus/masturmynd/raw/master/screenshots/enter-solution.png)
 
-![A screenshot showing a full game](https://github.com/xxyy/masturmynd/raw/master/screenshots/full-game.png)
+![A screenshot showing a full game](https://github.com/literalplus/masturmynd/raw/master/screenshots/full-game.png)
 
 
 License
